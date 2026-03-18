@@ -29,4 +29,19 @@ public class AgedBrie {
   public void setQuality(int quality) {
     this.quality = quality;
   }
+
+    public void updateQuality() {
+      if (getSell_in() > 0) {
+        int value = 1;
+        if(this.quality + value > 50) {
+          this.quality = 50;
+        }
+      } else {
+        int value = 2;
+        if(this.quality + value >= 0) {
+          this.quality += value;
+        }
+      }
+      setSell_in(this.sell_in -= 1);
+    }
 }
